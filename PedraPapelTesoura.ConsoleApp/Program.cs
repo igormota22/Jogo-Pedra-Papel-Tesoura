@@ -1,65 +1,43 @@
-﻿using System.Security.Cryptography;
-
-class Program
+﻿class Program
 {
     static void Main(string[] args)
+    {
+
+
+        ExecutarPartida();
+
+    }
+
+    static void ExecutarPartida()
     {
         while (true)
         {
             ExibirCabecalho();
 
-            int jogadaJogador = FazerJogadaJogador();
-            int jogadaComputador = FazerJogadaComputador();
+            Jogador.FazerJogada();
+            Computador.FazerJogada();
 
-            CompararJogadas(jogadaJogador, jogadaComputador);
+            Console.Clear();
 
-            System.Console.WriteLine();
+            CompararJogadas(Jogador.opcaoJogada, Computador.opcaoJogada);
 
             if (!JogarNovamente())
             {
                 break;
             }
         }
-
-        static void ExibirCabecalho()
-        {
-            Console.Clear();
-            System.Console.WriteLine("---------------------------");
-            System.Console.WriteLine("PEDRA,PAPEL,TESOURA");
-            System.Console.WriteLine("---------------------------");
-
-        }
     }
 
-    public static int FazerJogadaJogador()
+    private static void ExibirCabecalho()
     {
-        System.Console.WriteLine("1 - Pedra");
-        System.Console.WriteLine("2 - Papel");
-        System.Console.WriteLine("3 - Tesoura");
-        System.Console.Write("Escolha sua jogada: ");
-        int opcaoJogadaJogador = Convert.ToInt32(Console.ReadLine());
+        Console.Clear();
+        System.Console.WriteLine("---------------------------");
+        System.Console.WriteLine("PEDRA,PAPEL,TESOURA");
+        System.Console.WriteLine("---------------------------");
 
-        if (opcaoJogadaJogador != 1 && opcaoJogadaJogador != 2 && opcaoJogadaJogador != 3)
-        {
-            System.Console.WriteLine("Escolha uma opção valida");
-            Console.ReadLine();
-
-        }
-        return opcaoJogadaJogador;
     }
 
-    public static int FazerJogadaComputador()
-    {
-
-        System.Console.WriteLine("Computador escolheu jogada,aperte ENTER para continuar");
-        int opcaoJogadaComputador = RandomNumberGenerator.GetInt32(1, 4);
-        Console.ReadLine();
-
-
-        return opcaoJogadaComputador;
-    }
-
-    public static void CompararJogadas(int opcaoJogadaJogador, int opcaoJogadaComputador)
+    private static void CompararJogadas(int opcaoJogadaJogador, int opcaoJogadaComputador)
     {
         string? escolhaJogador = "";
         string? escolhaComputador = "";
@@ -137,7 +115,7 @@ class Program
 
     }
 
-    public static bool JogarNovamente()
+    private static bool JogarNovamente()
     {
         System.Console.WriteLine("Deseja jogar novamente? (s/N)");
         string? desejaJogarNovamente = Console.ReadLine()?.ToUpper();
