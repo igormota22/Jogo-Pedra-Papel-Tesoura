@@ -1,37 +1,68 @@
 ﻿using System.Security.Cryptography;
 
-
-while (true)
+class Program
 {
-    Console.Clear();
-    System.Console.WriteLine("---------------------------");
-    System.Console.WriteLine("PEDRA,PAPEL,TESOURA");
-    System.Console.WriteLine("---------------------------");
-
-    System.Console.WriteLine("1 - Pedra");
-    System.Console.WriteLine("2 - Papel");
-    System.Console.WriteLine("3 - Tesoura");
-    System.Console.Write("Escolha sua jogada: ");
-    int opcaoJogadaJogador = Convert.ToInt32(Console.ReadLine());
-
-
-    if (opcaoJogadaJogador != 1 && opcaoJogadaJogador != 2 && opcaoJogadaJogador != 3)
+    static void Main(string[] args)
     {
+        while (true)
+        {
+            ExibirCabecalho();
 
-        System.Console.WriteLine("Escolha uma opção valida");
-        Console.ReadLine();
-        continue;
+            int jogadaJogador = FazerJogadaJogador();
+            int jogadaComputador = FazerJogadaComputador();
+
+            CompararJogadas(jogadaJogador, jogadaComputador);
+
+            System.Console.WriteLine();
+
+            if (!JogarNovamente())
+            {
+                break;
+            }
+        }
+
+        static void ExibirCabecalho()
+        {
+            Console.Clear();
+            System.Console.WriteLine("---------------------------");
+            System.Console.WriteLine("PEDRA,PAPEL,TESOURA");
+            System.Console.WriteLine("---------------------------");
+
+        }
     }
-    else
+
+    public static int FazerJogadaJogador()
     {
+        System.Console.WriteLine("1 - Pedra");
+        System.Console.WriteLine("2 - Papel");
+        System.Console.WriteLine("3 - Tesoura");
+        System.Console.Write("Escolha sua jogada: ");
+        int opcaoJogadaJogador = Convert.ToInt32(Console.ReadLine());
+
+        if (opcaoJogadaJogador != 1 && opcaoJogadaJogador != 2 && opcaoJogadaJogador != 3)
+        {
+            System.Console.WriteLine("Escolha uma opção valida");
+            Console.ReadLine();
+
+        }
+        return opcaoJogadaJogador;
+    }
+
+    public static int FazerJogadaComputador()
+    {
+
         System.Console.WriteLine("Computador escolheu jogada,aperte ENTER para continuar");
         int opcaoJogadaComputador = RandomNumberGenerator.GetInt32(1, 4);
         Console.ReadLine();
-        Console.Clear();
 
+
+        return opcaoJogadaComputador;
+    }
+
+    public static void CompararJogadas(int opcaoJogadaJogador, int opcaoJogadaComputador)
+    {
         string? escolhaJogador = "";
         string? escolhaComputador = "";
-
 
         if (opcaoJogadaJogador == 1)
         {
@@ -59,7 +90,6 @@ while (true)
         {
             escolhaComputador = "Tesoura";
         }
-
 
         if (opcaoJogadaJogador == opcaoJogadaComputador)
         {
@@ -107,17 +137,21 @@ while (true)
 
     }
 
-    System.Console.WriteLine();
-
-    System.Console.WriteLine("Deseja jogar novamente? (s/N)");
-    string? desejaJogarNovamente = Console.ReadLine()?.ToUpper();
-
-
-    if (desejaJogarNovamente != "S")
+    public static bool JogarNovamente()
     {
-        break;
+        System.Console.WriteLine("Deseja jogar novamente? (s/N)");
+        string? desejaJogarNovamente = Console.ReadLine()?.ToUpper();
+
+
+        if (desejaJogarNovamente != "S")
+        {
+            return false;
+        }
+        return true;
     }
 }
+
+
 
 
 
