@@ -1,5 +1,11 @@
 ﻿class Program
 {
+
+    const int escolhaPedra = 1;
+    const int escolhaPapel = 2;
+    const int escolhaTesoura = 3;
+
+
     static void Main(string[] args)
     {
 
@@ -42,29 +48,29 @@
         string? escolhaJogador = "";
         string? escolhaComputador = "";
 
-        if (opcaoJogadaJogador == 1)
+        if (opcaoJogadaJogador == escolhaPedra)
         {
             escolhaJogador = "Pedra";
         }
-        else if (opcaoJogadaJogador == 2)
+        else if (opcaoJogadaJogador == escolhaPapel)
         {
             escolhaJogador = "Papel";
         }
-        else if (opcaoJogadaJogador == 3)
+        else if (opcaoJogadaJogador == escolhaTesoura)
         {
             escolhaJogador = "Tesoura";
         }
 
 
-        if (opcaoJogadaComputador == 1)
+        if (opcaoJogadaComputador == escolhaPedra)
         {
             escolhaComputador = "Pedra";
         }
-        else if (opcaoJogadaComputador == 2)
+        else if (opcaoJogadaComputador == escolhaPapel)
         {
             escolhaComputador = "Papel";
         }
-        else if (opcaoJogadaComputador == 3)
+        else if (opcaoJogadaComputador == escolhaTesoura)
         {
             escolhaComputador = "Tesoura";
         }
@@ -76,42 +82,43 @@
             System.Console.WriteLine("Empate");
 
         }
-        else if (opcaoJogadaJogador == 1 && opcaoJogadaComputador == 2)
+        else if (opcaoJogadaJogador == escolhaPedra && opcaoJogadaComputador == escolhaPapel)
         {
             System.Console.WriteLine($"O jogador jogou {escolhaJogador}");
             System.Console.WriteLine($"O computador jogou {escolhaComputador}");
             System.Console.WriteLine("Jogador Perdeu");
         }
-        else if (opcaoJogadaJogador == 1 && opcaoJogadaComputador == 3)
+        else if (opcaoJogadaJogador == escolhaPedra && opcaoJogadaComputador == escolhaTesoura)
         {
             System.Console.WriteLine($"O jogador jogou {escolhaJogador}");
             System.Console.WriteLine($"O computador jogou {escolhaComputador}");
             System.Console.WriteLine("Jogador Venceu");
         }
-        else if (opcaoJogadaJogador == 2 && opcaoJogadaComputador == 3)
+        else if (opcaoJogadaJogador == escolhaPapel && opcaoJogadaComputador == escolhaTesoura)
         {
             System.Console.WriteLine($"O jogador jogou {escolhaJogador}");
             System.Console.WriteLine($"O computador jogou {escolhaComputador}");
             System.Console.WriteLine("Jogador Perdeu");
         }
-        else if (opcaoJogadaJogador == 2 && opcaoJogadaComputador == 1)
+        else if (opcaoJogadaJogador == escolhaPapel && opcaoJogadaComputador == escolhaPedra)
         {
             System.Console.WriteLine($"O jogador jogou {escolhaJogador}");
             System.Console.WriteLine($"O computador jogou {escolhaComputador}");
             System.Console.WriteLine("Jogador Venceu");
         }
-        else if (opcaoJogadaJogador == 3 && opcaoJogadaComputador == 1)
+        else if (opcaoJogadaJogador == escolhaTesoura && opcaoJogadaComputador == escolhaPedra)
         {
             System.Console.WriteLine($"O jogador jogou {escolhaJogador}");
             System.Console.WriteLine($"O computador jogou {escolhaComputador}");
             System.Console.WriteLine("Jogador Perdeu");
         }
-        else if (opcaoJogadaJogador == 3 && opcaoJogadaComputador == 2)
+        else if (opcaoJogadaJogador == escolhaTesoura && opcaoJogadaComputador == escolhaPapel)
         {
             System.Console.WriteLine($"O jogador jogou {escolhaJogador}");
             System.Console.WriteLine($"O computador jogou {escolhaComputador}");
             System.Console.WriteLine("Jogador Venceu");
         }
+
 
     }
 
