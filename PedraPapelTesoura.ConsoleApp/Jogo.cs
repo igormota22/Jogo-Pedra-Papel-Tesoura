@@ -1,6 +1,6 @@
 class Jogo
 {
-  public  static void ExecutarPartida()
+    public static void ExecutarPartida()
     {
         while (true)
         {
@@ -8,7 +8,6 @@ class Jogo
 
             Jogador.FazerJogada();
             Computador.FazerJogada();
-
             Console.Clear();
 
             CompararJogadas(Jogador.opcaoJogada, Computador.opcaoJogada);
@@ -23,9 +22,11 @@ class Jogo
     private static void ExibirCabecalho()
     {
         Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Yellow;
         System.Console.WriteLine("---------------------------");
         System.Console.WriteLine("PEDRA,PAPEL,TESOURA");
         System.Console.WriteLine("---------------------------");
+        Console.ForegroundColor = ConsoleColor.White;
 
     }
 
@@ -67,46 +68,116 @@ class Jogo
 
         if (opcaoJogadaJogador == opcaoJogadaComputador)
         {
-            System.Console.WriteLine($"O jogador jogou {escolhaJogador}");
-            System.Console.WriteLine($"O compuatdor jogou {escolhaComputador}");
+            System.Console.Write("O jogador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaJogador);
+            Console.ForegroundColor = ConsoleColor.White;
+            System.Console.WriteLine();
+
+            System.Console.Write("O computador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaComputador);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            System.Console.WriteLine();
+
             System.Console.WriteLine("Empate");
 
         }
         else if (opcaoJogadaJogador == escolhaPedra && opcaoJogadaComputador == escolhaPapel)
         {
-            System.Console.WriteLine($"O jogador jogou {escolhaJogador}");
-            System.Console.WriteLine($"O computador jogou {escolhaComputador}");
+            System.Console.Write("O jogador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaJogador);
+            Console.ForegroundColor = ConsoleColor.White;
+            System.Console.WriteLine();
+
+            System.Console.Write("O computador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaComputador);
+            Console.ForegroundColor = ConsoleColor.Red;
+            System.Console.WriteLine();
+
             System.Console.WriteLine("Jogador Perdeu");
         }
         else if (opcaoJogadaJogador == escolhaPedra && opcaoJogadaComputador == escolhaTesoura)
         {
-            System.Console.WriteLine($"O jogador jogou {escolhaJogador}");
-            System.Console.WriteLine($"O computador jogou {escolhaComputador}");
+            System.Console.Write("O jogador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaJogador);
+            Console.ForegroundColor = ConsoleColor.White;
+            System.Console.WriteLine();
+
+            System.Console.Write("O computador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaComputador);
+            Console.ForegroundColor = ConsoleColor.Green;
+            System.Console.WriteLine();
+
             System.Console.WriteLine("Jogador Venceu");
         }
         else if (opcaoJogadaJogador == escolhaPapel && opcaoJogadaComputador == escolhaTesoura)
         {
-            System.Console.WriteLine($"O jogador jogou {escolhaJogador}");
-            System.Console.WriteLine($"O computador jogou {escolhaComputador}");
+            System.Console.Write("O jogador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaJogador);
+            Console.ForegroundColor = ConsoleColor.White;
+            System.Console.WriteLine();
+
+            System.Console.Write("O computador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaComputador);
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            System.Console.WriteLine();
             System.Console.WriteLine("Jogador Perdeu");
         }
         else if (opcaoJogadaJogador == escolhaPapel && opcaoJogadaComputador == escolhaPedra)
         {
-            System.Console.WriteLine($"O jogador jogou {escolhaJogador}");
-            System.Console.WriteLine($"O computador jogou {escolhaComputador}");
+            System.Console.Write("O jogador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaJogador);
+            Console.ForegroundColor = ConsoleColor.White;
+            System.Console.WriteLine();
+
+            System.Console.Write("O computador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaComputador);
+            Console.ForegroundColor = ConsoleColor.Green;
+            System.Console.WriteLine();
+
             System.Console.WriteLine("Jogador Venceu");
         }
         else if (opcaoJogadaJogador == escolhaTesoura && opcaoJogadaComputador == escolhaPedra)
         {
-            System.Console.WriteLine($"O jogador jogou {escolhaJogador}");
-            System.Console.WriteLine($"O computador jogou {escolhaComputador}");
+            System.Console.Write("O jogador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaJogador);
+            Console.ForegroundColor = ConsoleColor.White;
+            System.Console.WriteLine();
+
+            System.Console.Write("O computador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaComputador);
+            Console.ForegroundColor = ConsoleColor.Red;
+            System.Console.WriteLine();
+
             System.Console.WriteLine("Jogador Perdeu");
         }
         else if (opcaoJogadaJogador == escolhaTesoura && opcaoJogadaComputador == escolhaPapel)
         {
-            System.Console.WriteLine($"O jogador jogou {escolhaJogador}");
-            System.Console.WriteLine($"O computador jogou {escolhaComputador}");
-            System.Console.WriteLine("Jogador Venceu");
+            System.Console.Write("O jogador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaJogador);
+            Console.ForegroundColor = ConsoleColor.White;
+            System.Console.WriteLine();
+
+            System.Console.Write("O computador jogou ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Write(escolhaComputador);
+            Console.ForegroundColor = ConsoleColor.Green;
+            System.Console.WriteLine();
+
+            System.Console.WriteLine($"Jogador Venceu ");
         }
 
 
@@ -114,7 +185,18 @@ class Jogo
 
     private static bool JogarNovamente()
     {
-        System.Console.WriteLine("Deseja jogar novamente? (s/N)");
+        System.Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        System.Console.Write("Deseja jogar novamente? (");
+        Console.ForegroundColor = ConsoleColor.Green;
+        System.Console.Write("s");
+        Console.ForegroundColor = ConsoleColor.White;
+        System.Console.Write("/");
+        Console.ForegroundColor = ConsoleColor.Red;
+        System.Console.Write("N");
+        Console.ForegroundColor = ConsoleColor.White;
+        System.Console.WriteLine(")");
+
         string? desejaJogarNovamente = Console.ReadLine()?.ToUpper();
 
 
