@@ -1,11 +1,5 @@
 ﻿class Program
 {
-
-    const int escolhaPedra = 1;
-    const int escolhaPapel = 2;
-    const int escolhaTesoura = 3;
-
-
     static void Main(string[] args)
     {
 
@@ -45,6 +39,10 @@
 
     private static void CompararJogadas(int opcaoJogadaJogador, int opcaoJogadaComputador)
     {
+        const int escolhaPedra = 1;
+        const int escolhaPapel = 2;
+        const int escolhaTesoura = 3;
+
         string? escolhaJogador = "";
         string? escolhaComputador = "";
 
